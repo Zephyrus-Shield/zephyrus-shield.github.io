@@ -1,275 +1,437 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth"> <!-- Defaulting to dark mode for that "techie" feel -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edinen Udofia | Cloud Architect & Cloud Security Engineer | I.T Support</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Edinen Udofia | Cloud Architect & Security Engineer</title>
 
-  <!-- Favicon and Branding -->
-  <link rel="icon" https://github.com/Zephyrus-Shield/zephyrus-shield.github.io/blob/main/assets/logo.png?raw=true" type="image/png">
-  <img src="assets/logo.png" alt="Edinen Udofia Logo" class="logo">
-  <meta name="theme-color" content="#0a66c2">
+    <!-- Meta Tags (From your original, with updated image) -->
+    <meta name="theme-color" content="#4f46e5"> <!-- Indigo accent color -->
+    <meta property="og:title" content="Edinen Udofia | Cloud Architect & Cloud Security Engineer">
+    <meta property="og:description" content="Building secure, scalable cloud architectures with deep expertise in OCI, automation, and cybersecurity.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0f172a/e0e7ff?text=Edinen+Udofia">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zephyrus-shield.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Edinen Udofia | Cloud Architect & Cloud Security Engineer">
+    <meta name="twitter:description" content="Building secure, scalable cloud architectures with deep expertise in OCI and cybersecurity.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/0f172a/e0e7ff?text=Edinen+Udofia">
 
-  <!-- Open Graph (For LinkedIn/Facebook) -->
-  <meta property="og:title" content="Edinen Udofia | Cloud Architect & Cloud Security Engineer | I.T Support">
-  <meta property="og:description" content="Building secure, scalable cloud architectures with deep expertise in OCI, automation, and cybersecurity.">
-  <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/5969/5969059.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://zephyrus-shield.github.io/">
+    <!-- Favicon -->
+    <!-- I've created a placeholder favicon. Replace 'href' with the path to your actual logo.png -->
+    <link rel="icon" href="https://placehold.co/32x32/4f46e5/ffffff?text=EU&font=inter" type="image/png">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Edinen Udofia | Cloud Architect & Cloud Security Engineer | I.T Support">
-  <meta name="twitter:description" content="Building secure, scalable cloud architectures with deep expertise in OCI and cybersecurity.">
-  <meta name="twitter:image" content="https://cdn-icons-png.flaticon.com/512/5969/5969059.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <style>
-    /* ---------- BASE STYLES ---------- */
-    :root {
-      --primary-color: #0a66c2;
-      --accent-dark: #084a91;
-      --bg-gradient: linear-gradient(to bottom right, #e8f0fe, #ffffff);
-      --text-color: #333;
-      --bg-color: #fff;
-      --card-bg: #f9f9f9;
-    }
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    [data-theme="dark"] {
-      --bg-color: #121212;
-      --text-color: #eee;
-      --card-bg: #1e1e1e;
-      --bg-gradient: linear-gradient(to bottom right, #121212, #1a1a1a);
-    }
+    <script>
+        // Configure Tailwind to use dark mode based on the 'class' attribute
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--bg-color);
-      color: var(--text-color);
-      transition: all 0.3s ease;
-    }
-
-    header {
-      text-align: center;
-      background: var(--bg-gradient);
-      color: var(--accent-dark);
-      padding: 50px 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Animated logo */
-    .logo {
-      width: 80px;
-      animation: spin 8s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    h1 {
-      margin: 15px 0 5px;
-      font-size: 2em;
-    }
-
-    header p {
-      margin: 5px 0 0;
-      font-style: italic;
-      color: #555;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      color: var(--primary-color);
-      border-bottom: 2px solid var(--primary-color);
-      display: inline-block;
-      margin-bottom: 20px;
-    }
-
-    .card {
-      background: var(--card-bg);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
-    }
-
-    a {
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: var(--bg-gradient);
-      color: var(--accent-dark);
-    }
-
-    /* ---------- Dark Mode Toggle ---------- */
-    #themeToggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: var(--primary-color);
-      color: white;
-      border: none;
-      border-radius: 20px;
-      padding: 8px 14px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background 0.3s;
-    }
-
-    #themeToggle:hover {
-      background: var(--accent-dark);
-    }
-
-    /* ---------- Back to Top Button ---------- */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: var(--primary-color);
-      color: white;
-      border: none;
-      padding: 12px 16px;
-      border-radius: 50%;
-      font-size: 18px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      display: none;
-      transition: background 0.3s;
-    }
-
-    #backToTop:hover {
-      background: var(--accent-dark);
-    }
-  </style>
+    <style>
+        /* Small CSS tweaks */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style for the 'Back to Top' button (hidden by default) */
+        #backToTop {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        #backToTop.show {
+            display: block;
+            opacity: 1;
+        }
+    </style>
 </head>
 
-<body>
-  <header>
-    <img src="https://cdn-icons-png.flaticon.com/512/5969/5969059.png" alt="logo" class="logo">
-    <h1>Edinen Udofia</h1>
-    <h3>Cloud Architect & Cloud Security Engineer | I.T Support</h3>
-    <p>..developing secure and scalable cloud solutions.</p>
-    <button id="themeToggle">🌙 Dark Mode</button>
-  </header>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300 transition-colors duration-300">
 
-  <section>
-    <h2>About Me</h2>
-    <div class="card">
-      <p>
-        I’m a passionate Cloud Architect with hands-on expertise in building secure, scalable cloud systems.
-        I specialize in <b>Oracle Cloud Infrastructure (OCI)</b>, I.T support, and Blue Team cybersecurity operations.
-        My goal is to bridge cloud innovation with strong security principles for enterprise-grade reliability.
-      </p>
-    </div>
-  </section>
+    <!-- ===== Navigation Bar ===== -->
+    <nav class="sticky top-0 z-50 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="container mx-auto max-w-screen-xl px-4">
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo / Monogram -->
+                <a href="#" class="flex items-center gap-2" aria-label="Homepage">
+                    <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 text-white font-bold text-lg">
+                        EU
+                    </div>
+                    <span class="hidden sm:block font-semibold text-slate-800 dark:text-white">Edinen Udofia</span>
+                </a>
 
-  <section>
-    <h2>Core Skills</h2>
-    <div class="card">
-      <ul>
-        <li>Cloud Architecture (OCI)</li>
-        <li>Cybersecurity Operations (SIEM, Incident Response, Threat Detection)</li>
-        <li>Network Security & Monitoring (Wireshark, Log Analysis)</li>
-        <li>Infrastructure Design & System Optimization</li>
-      </ul>
-    </div>
-  </section>
+                <!-- Nav Links -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="#about" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a>
+                    <a href="#skills" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Skills</a>
+                    <a href="#projects" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Projects</a>
+                    <a href="#contact" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a>
+                </div>
 
-  <section>
-    <h2>Projects</h2>
-    <div class="card">
-      <ul>
-        <li><b>OCI Automated Security Policy Auditor:</b> Python script to automatically scan OCI policies and detect misconfigurations.</li>
-        <li><b>Blue Team ML Toolkit:</b> Machine learning models for threat classification and anomaly detection on network traffic.</li>
-        <li><b>Solar-Cloud Integration System:</b> Designed a smart hybrid system for powering telecommunication infrastructure with solar energy.</li>
-      </ul>
-    </div>
-  </section>
+                <!-- Theme Toggle Button -->
+                <button id="themeToggle" class="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors" aria-label="Toggle light/dark mode">
+                    <!-- Sun Icon (Light Mode) -->
+                    <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Moon Icon (Dark Mode) -->
+                    <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-  <section>
-    <h2>Education & Certification</h2>
-    <div class="card">
-      <ul>
-        <li>OCI Cloud Architect Associate</li>
-        <li>OCI Cloud Foundations Associate</li>
-        <li>Google Cybersecurity Professional Certificate</li>
-        <li>Hands-on expertise with Cloud Infrsatructure and security integration into cloud solutions</li>
-        <li>B.Eng. in Electrical & Electronics Engineering (Specialization: Communications)</li>
-      </ul>
-    </div>
-  </section>
+    <!-- ===== Main Content ===== -->
+    <main>
 
-  <section>
-    <h2>Contact</h2>
-    <div class="card">
-      <p>
-        📧 <a href="mailto:udofiaedinen@gmail.com">udofiaedinen@gmail.com</a><br>
-        🌐 <a href="https://www.linkedin.com/in/edinen-udofia-222203272/">linkedin.com/in/edinen-udofia</a><br>
-        💻 <a href="https://zephyrus-shield.github.io/">zephyrus-shield.github.io</a>
-      </p>
-    </div>
-  </section>
+        <!-- ===== Hero Section (About) ===== -->
+        <header id="about" class="container mx-auto max-w-screen-lg px-4 py-24 md:py-32 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight mb-4">
+                Edinen Udofia
+            </h1>
+            <p class="text-xl md:text-2xl font-medium text-indigo-600 dark:text-indigo-400 mb-8">
+                Cloud Architect & Cloud Security Engineer | I.T Support
+            </p>
+            <p class="max-w-prose mx-auto text-lg text-slate-600 dark:text-slate-300 mb-10">
+                I build secure, scalable, and resilient cloud solutions. With deep expertise in
+                <strong class="font-semibold text-slate-800 dark:text-white">Oracle Cloud Infrastructure (OCI)</strong>, 
+                automation, and Blue Team operations, I bridge the gap between cloud innovation and enterprise-grade security.
+            </p>
+            
+            <!-- Social Links -->
+            <div class="flex items-center justify-center gap-4">
+                <a href="https://www.linkedin.com/in/edinen-udofia-222203272/" target="_blank" rel="noopener noreferrer" class="flex h-12 w-12 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-100 dark:hover:bg-indigo-900 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all" aria-label="LinkedIn Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/Zephyrus-Shield/cloud-projects" target="_blank" rel="noopener noreferrer" class="flex h-12 w-12 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-100 dark:hover:bg-indigo-900 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all" aria-label="GitHub Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+                <a href="mailto:udofiaedinen@gmail.com" class="flex h-12 w-12 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-100 dark:hover:bg-indigo-900 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all" aria-label="Email me">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </header>
 
-  <footer>
-    <p>© 2025 Edinen Udofia. All Rights Reserved.</p>
-  </footer>
+        <!-- ===== Core Skills Section ===== -->
+        <section id="skills" class="bg-white dark:bg-slate-800/50 py-20 lg:py-24">
+            <div class="container mx-auto max-w-screen-xl px-4">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                        Core Competencies
+                    </h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-300">
+                        A blend of architectural design, robust security, and hands-on technical support.
+                    </p>
+                </div>
 
-  <button id="backToTop">⬆</button>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+                    <!-- Skill Card 1 -->
+                    <div class="rounded-xl bg-slate-50 dark:bg-slate-800 p-6 border border-slate-200 dark:border-slate-700">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path><path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"></path><path d="M12 14c-4.42 0-8 3.58-8 8h16c0-4.42-3.58-8-8-8z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Cloud Architecture (OCI)</h3>
+                        <p class="text-slate-600 dark:text-slate-300">
+                            Designing and deploying scalable, highly available, and fault-tolerant systems on Oracle Cloud Infrastructure.
+                        </p>
+                    </div>
 
-  <script>
-    // ---------- DARK MODE TOGGLE ----------
-    const toggle = document.getElementById('themeToggle');
-    toggle.addEventListener('click', () => {
-      const currentTheme = document.body.getAttribute('data-theme');
-      if (currentTheme === 'dark') {
-        document.body.setAttribute('data-theme', 'light');
-        toggle.textContent = '🌙 Dark Mode';
-      } else {
-        document.body.setAttribute('data-theme', 'dark');
-        toggle.textContent = '☀️ Light Mode';
-      }
-    });
+                    <!-- Skill Card 2 -->
+                    <div class="rounded-xl bg-slate-50 dark:bg-slate-800 p-6 border border-slate-200 dark:border-slate-700">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Cybersecurity Operations</h3>
+                        <p class="text-slate-600 dark:text-slate-300">
+                            Blue Team defense, threat detection, incident response, and SIEM log analysis to protect critical assets.
+                        </p>
+                    </div>
 
-    // ---------- BACK TO TOP BUTTON ----------
-    const backToTop = document.getElementById('backToTop');
-    window.onscroll = () => {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTop.style.display = 'block';
-      } else {
-        backToTop.style.display = 'none';
-      }
-    };
+                    <!-- Skill Card 3 -->
+                    <div class="rounded-xl bg-slate-50 dark:bg-slate-800 p-6 border border-slate-200 dark:border-slate-700">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Network Security</h3>
+                        <p class="text-slate-600 dark:text-slate-300">
+                            Monitoring and securing networks using tools like Wireshark, intrusion detection systems (IDS), and log analysis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    backToTop.onclick = () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-  </script>
+        <!-- ===== Projects Section ===== -->
+        <section id="projects" class="py-20 lg:py-24">
+            <div class="container mx-auto max-w-screen-xl px-4">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                        Featured Projects
+                    </h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-300">
+                        Applying theory to practice. Here are some of the solutions I've built.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+                    <!-- Project Card 1 -->
+                    <div class="flex flex-col rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden transition-all duration-300 hover:shadow-xl dark:hover:shadow-indigo-900/20">
+                        <div class="p-6 sm:p-8 flex-grow">
+                            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">OCI Automated Security Policy Auditor</h3>
+                            <p class="text-slate-600 dark:text-slate-300 mb-6">
+                                A Python script that utilizes the OCI SDK to automatically scan IAM policies, detect misconfigurations, and report on security vulnerabilities.
+                            </p>
+                        </div>
+                        <div class="px-6 sm:px-8 pb-6">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs font-medium bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 px-2.5 py-1 rounded-full">Python</span>
+                                <span class="text-xs font-medium bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 px-2.5 py-1 rounded-full">OCI</span>
+                                <span class="text-xs font-medium bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 px-2.5 py-1 rounded-full">Security</span>
+                                <span class="text-xs font-medium bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 px-2.5 py-1 rounded-full">Automation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="flex flex-col rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden transition-all duration-300 hover:shadow-xl dark:hover:shadow-indigo-900/20">
+                        <div class="p-6 sm:p-8 flex-grow">
+                            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Blue Team ML Toolkit</h3>
+                            <p class="text-slate-600 dark:text-slate-300 mb-6">
+                                Developed and trained machine learning models for threat classification and anomaly detection on network traffic logs, improving incident response time.
+                            </p>
+                        </div>
+                        <div class="px-6 sm:px-8 pb-6">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs font-medium bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 px-2.5 py-1 rounded-full">Machine Learning</span>
+                                <span class="text-xs font-medium bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 px-2.5 py-1 rounded-full">Cybersecurity</span>
+                                <span class="text-xs font-medium bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 px-2.5 py-1 rounded-full">Blue Team</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 (Combined from your original) -->
+                    <!-- [REMOVED] This entire div block for the Solar-Cloud project has been deleted. -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Education & Certs Section ===== -->
+        <section id="education" class="bg-white dark:bg-slate-800/50 py-20 lg:py-24">
+            <div class="container mx-auto max-w-screen-xl px-4">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                        Education & Certifications
+                    </h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-300">
+                        A foundation of formal education and continuous professional development.
+                    </p>
+                </div>
+
+                <div class="max-w-3xl mx-auto mt-16 space-y-8">
+                    <!-- Cert Item 1 -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M12 1.646a10.354 10.354 0 0 1 10.354 10.354 10.354 10.354 0 0 1-10.354 10.354A10.354 10.354 0 0 1 1.646 12 10.354 10.354 0 0 1 12 1.646z"></path><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">OCI Cloud Architect Associate</h3>
+                            <p class="text-slate-600 dark:text-slate-300">Oracle</p>
+                        </div>
+                    </div>
+                    <!-- Cert Item 2 -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M12 1.646a10.354 10.354 0 0 1 10.354 10.354 10.354 10.354 0 0 1-10.354 10.354A10.354 10.354 0 0 1 1.646 12 10.354 10.354 0 0 1 12 1.646z"></path><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">OCI Cloud Foundations Associate</h3>
+                            <p class="text-slate-600 dark:text-slate-300">Oracle</p>
+                        </div>
+                    </div>
+                    <!-- Cert Item 3 -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M12 1.646a10.354 10.354 0 0 1 10.354 10.354 10.354 10.354 0 0 1-10.354 10.354A10.354 10.354 0 0 1 1.646 12 10.354 10.354 0 0 1 12 1.646z"></path><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Google Cybersecurity Professional Certificate</h3>
+                            <p class="text-slate-600 dark:text-slate-300">Google / Coursera</p>
+                        </div>
+                    </div>
+                    <!-- Education Item -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 5 6 5 6 5s6 0 6-5v-5"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">B.Eng. in Electrical & Electronics Engineering</h3>
+                            <p class="text-slate-600 dark:text-slate-300">Specialization: Communications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Contact Section ===== -->
+        <section id="contact" class="py-20 lg:py-32 text-center">
+            <div class="container mx-auto max-w-2xl px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
+                    Let's Build Together
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-300 mb-10">
+                    I'm always open to discussing new projects, creative ideas, or opportunities 
+                    to be part of your vision. Feel free to reach out.
+                </p>
+                <a href="mailto:udofiaedinen@gmail.com" class="inline-block rounded-lg bg-indigo-600 px-8 py-3 text-base font-semibold text-white shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 transition-all">
+                    Say Hello
+                </a>
+                
+                <!-- [ADDED] Social Links added to Contact section -->
+                <div class="flex items-center justify-center gap-4 mt-10">
+                    <a href="https://www.linkedin.com/in/edinen-udofia-222203272/" target="_blank" rel="noopener noreferrer" class="flex h-12 w-12 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-100 dark:hover:bg-indigo-900 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all" aria-label="LinkedIn Profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/Zephyrus-Shield/cloud-projects" target="_blank" rel="noopener noreferrer" class="flex h-12 w-12 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-indigo-100 dark:hover:bg-indigo-900 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all" aria-label="GitHub Profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="border-t border-slate-200 dark:border-slate-800">
+        <div class="container mx-auto max-w-screen-xl px-4 py-8">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <p class="text-sm text-slate-500 dark:text-slate-400 text-center sm:text-left">
+                    © 2025 Edinen Udofia. All Rights Reserved.
+                </p>
+                <!-- Footer Social Links -->
+                <div class="flex items-center justify-center gap-4 mt-4 sm:mt-0">
+                    <a href="https://www.linkedin.com/in/edinen-udofia-222203272/" target="_blank" rel="noopener noreferrer" class="flex h-8 w-8 items-center justify-center rounded-lg text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" aria-label="LinkedIn Profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+Listener
+                    </a>
+                    <a href="https://github.com/Zephyrus-Shield/cloud-projects" target="_blank" rel="noopener noreferrer" class="flex h-8 w-8 items-center justify-center rounded-lg text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" aria-label="GitHub Profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></d_path>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== Back to Top Button ===== -->
+    <button id="backToTop" class="fixed bottom-6 right-6 h-12 w-12 flex items-center justify-center rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 transition-all" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleBtn = document.getElementById('themeToggle');
+            const sunIcon = document.getElementById('sunIcon');
+            const moonIcon = document.getElementById('moonIcon');
+            const backToTopBtn = document.getElementById('backToTop');
+            const htmlEl = document.documentElement;
+
+            // --- Theme Toggle Logic ---
+
+            // Function to set theme
+            function setTheme(theme) {
+                if (theme === 'dark') {
+                    htmlEl.classList.add('dark');
+                    sunIcon.style.display = 'none';
+                    moonIcon.style.display = 'block';
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    htmlEl.classList.remove('dark');
+                    sunIcon.style.display = 'block';
+                    moonIcon.style.display = 'none';
+                    localStorage.setItem('theme', 'light');
+                }
+            }
+
+            // Check for saved theme in localStorage
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            // Initialize theme: 1. localStorage, 2. OS preference, 3. Default (dark, as per class)
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else if (prefersDark) {
+                setTheme('dark');
+            } else {
+                setTheme(htmlEl.classList.contains('dark') ? 'dark' : 'light');
+            }
+
+            // Toggle button click event
+            themeToggleBtn.addEventListener('click', () => {
+                const isDark = htmlEl.classList.contains('dark');
+                setTheme(isDark ? 'light' : 'dark');
+            });
+
+
+            // --- Back to Top Button Logic ---
+            
+            // Show/hide button on scroll
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+
+            // Scroll to top on click
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
+
+
+
